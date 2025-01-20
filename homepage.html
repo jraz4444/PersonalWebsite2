@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Professional Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+
+        /* Sepia Mode */
+        body.sepia-mode {
+            background-color: #f4ecd8;
+            color: #5b4636;
+        }
+
+        .theme-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .theme-switcher select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="theme-switcher">
+        <label for="themeSelector">Choose Theme:</label>
+        <select id="themeSelector" onchange="changeTheme()">
+            <option value="light-mode">Light Mode</option>
+            <option value="sepia-mode">Sepia Mode</option>
+        </select>
+    </div>
+
+    <h1>My Website</h1>
+    <p>You will have the option to choose different light theme mode based on what you prefer.</p>
+
+    <script>
+        // Check if a theme was previously selected
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.className = savedTheme;
+            document.getElementById('themeSelector').value = savedTheme;
+        }
+
+        function changeTheme() {
+            const selectedTheme = document.getElementById('themeSelector').value;
+            document.body.className = selectedTheme;
+            localStorage.setItem('theme', selectedTheme);
+        }
+    </script>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jonathan Raz - Investigative and Passionate Computer Science Student
+        </h1>
+    </header>
+
+    <nav>
+        <a href="aboutme.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contactme.html">Contact Me</a>
+
+    </nav>
+</section>
+<section class="horizontal-timeline">
+    <div class="timeline-container">
+        <!-- Timeline Event 1 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>Presidential Scholar of High Point University(Nov. of 2021) </h2>
+                <p>Being able to have an unweighted GPA above an 3.58</p>
+            </div>
+        </div>
+        <!-- Timeline Event 2 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>Siena College Programming Competition(May of 2022)</h2>
+                <p>Place top 10 in programming competition! </p>
+            </div>
+        </div>
+        <!-- Timeline Event 3 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>National Honors Society Ceremony(June of 2022)</h2>
+                <p> Obtain a culmulative of at least 87.5 by the end of their Sophemore year or Junoir year</p>
+            </div>
+        </div>
+        <!-- Timeline Event 3 -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>Programming Assistant(June - August of 2022)</h2>
+                <p>Learn how to help an team build an app from scratch</p>
+            </div>
+        </div>
+         <!-- Timeline Event 4 -->
+         <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>National Cyber League Competition(April of 2023)</h2>
+                <p>We placed top 100 out of 3600 teams!</p>
+            </div>
+        </div>
+         <!-- Timeline Event 5 -->
+         <div class="timeline-item">
+            <div class="timeline-content">
+                <h2>Dean's List of High Point University(May of 2024)</h2>
+                <p>At least a 3.5 GPA</p>
+            </div>
+        </div>
+        </div>
+        <!-- Add more events as needed -->
+    </div>
+</section>
+    <section class="hero">
+        <img src="Headshot.png" alt="Description of the picture" width="400" height="400">
+        <a href="careergoals.html" class="button">Career Goals</a>
+    </section>
+</body>
+</html>
