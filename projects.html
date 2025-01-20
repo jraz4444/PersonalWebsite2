@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projects Page</title>
+</head>
+<!-- Link to the shared CSS file -->
+<link rel="stylesheet" href="css/darkmode.html">
+<body>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Sepia Mode */
+        body.sepia-mode {
+            background-color: #f4ecd8;
+            color: #5b4636;
+        }
+
+        .theme-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .theme-switcher select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="theme-switcher">
+        <label for="themeSelector">Choose Theme:</label>
+        <select id="themeSelector" onchange="changeTheme()">
+            <option value="light-mode">Light Mode</option>
+            <option value="dark-mode">Dark Mode</option>
+            <option value="sepia-mode">Sepia Mode</option>
+        </select>
+    </div>
+
+
+    <script>
+        // Check if a theme was previously selected
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.className = savedTheme;
+            document.getElementById('themeSelector').value = savedTheme;
+        }
+
+        function changeTheme() {
+            const selectedTheme = document.getElementById('themeSelector').value;
+            document.body.className = selectedTheme;
+            localStorage.setItem('theme', selectedTheme);
+        }
+    </script>
+    <a href="homepage.html" id="homeLink">Home</a> <!-- Link to the home page -->
+<h1>Projects</h1>
+<a href="https://github.com/jraz4444">Jonathan's Github Projects</a>
+<p style="font-size: 20px;">Personal Web Page</p>
+<p>
+    Skilled in creating personal websites to showcase achievements and expertise
+</p>
+<p style="font-size: 20px;">To-Do List Web App</p>
+<p>
+    Created a to-do list app to help users organize tasks, set prioritize and track progress efficiently
+</p>
+<p style="font-size: 20px;">System Security Project 1</p>
+<p>
+    Analyzed attacks on XSS,SQL Injection, Weak Password Hashing, File Upload Vulnerabilities,path traversal, VM Password cracking, binary exploitation and network traffic
+</p>
+<p style="font-size: 20px;">System Security Project 2</p>
+<p>
+    Analyzed CVE and ROP to identify Vulnerabilities,root causes,impacts and their role in exploitation
+</p>
+</body>
+</html>
