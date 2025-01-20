@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0775eaf6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .skill-description {
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .theme-switcher select {
+            padding: 5px;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Sepia Mode */
+        body.sepia-mode {
+            background-color: #f4ecd8;
+            color: #bd6b2c;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header>
+        <a href="homepage.html" id="homeLink">Home</a> <!-- Link to the home page -->
+        <h1>My Skills</h1>
+    </header>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <label for="themeSelector">Choose Theme:</label>
+        <select id="themeSelector" onchange="changeTheme()">
+            <option value="light-mode">Light Mode</option>
+            <option value="dark-mode">Dark Mode</option>
+            <option value="sepia-mode">Sepia Mode</option>
+        </select>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <ul>
+            <li>
+                <div class="skill-name">Python & R</div>
+                <div class="skill-description">Proficient in using Python & R for problem-solving, data analysis, and visualization (e.g., matplotlib/ R Studio).</div>
+            </li>
+            <li>
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-description">Able to create games and interactive content from scratch using JavaScript.</div>
+            </li>
+            <li>
+                <div class="skill-name">HTML & CSS</div>
+                <div class="skill-description">Skilled in web development, building responsive websites with HTML and CSS.</div>
+            </li>
+            <li>
+                <div class="skill-name">C++</div>
+                <div class="skill-description">Experienced in implementing algorithms and data structures using C++ for optimized performance.</div>
+            </li>
+            <li>
+                <div class="skill-name">Git & GitHub</div>
+                <div class="skill-description">Experienced with version control, branching, and collaboration using Git and GitHub.</div>
+            </li>
+            <li>
+                <div class="skill-name">VSCode</div>
+                <div class="skill-description">Familiar with VSCode shortcuts and commands, including terminal usage and language extensions.</div>
+            </li>
+            <li>
+                <div class="skill-name">SQL</div>
+                <div class="skill-description">Experienced with inner and outer joins, and editing databases.</div>
+            </li>
+            <li>
+                <div class="skill-name">Flex/Bison</div>
+                <div class="skill-description">Flex works with Bison to generate lexical analyzers (scanners) essential for compilers. Flex is a tool for lexical analysis, and Bison is the parser generator that reads Bison syntax.</div>
+            </li>
+            <li>
+                <div class="skill-name">XML & Java</div>
+                <div class="skill-description"> I worked on XML for the front end development for the app development that I was doing and java as the back end.</div>
+            </li>
+            <li>
+                <div class="skill-name">Bash & Python Script</div>
+                <div class="skill-description">Use scripts to automate a process to show that the compiler was working correctly.</div>
+            </li>
+            <li>
+                <div class="skill-name">C#</div>
+                <div class="skill-description">Backend for programming for an app that I was doing when I was working as a programming assistant.</div>
+            </li>
+            <li>
+                <div class="skill-name">C</div>
+                <div class="skill-description">Computer architecture as well as understanding fundamentals of programming languages.</div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Check if a theme was previously selected
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.className = savedTheme;
+            document.getElementById('themeSelector').value = savedTheme;
+        }
+
+        function changeTheme() {
+            const selectedTheme = document.getElementById('themeSelector').value;
+            document.body.className = selectedTheme;
+            localStorage.setItem('theme', selectedTheme);
+        }
+    </script>
+</body>
+</html>
