@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<a href="homepage.html" id="homeLink">Home</a> <!-- Link to the home page -->
+<body>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Sepia Mode */
+        body.sepia-mode {
+            background-color: #f4ecd8;
+            color: #5b4636;
+        }
+
+        .theme-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .theme-switcher select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="theme-switcher">
+        <label for="themeSelector">Choose Theme:</label>
+        <select id="themeSelector" onchange="changeTheme()">
+            <option value="light-mode">Light Mode</option>
+            <option value="dark-mode">Dark Mode</option>
+            <option value="sepia-mode">Sepia Mode</option>
+        </select>
+    </div>
+
+    
+
+    <script>
+        // Check if a theme was previously selected
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.className = savedTheme;
+            document.getElementById('themeSelector').value = savedTheme;
+        }
+
+        function changeTheme() {
+            const selectedTheme = document.getElementById('themeSelector').value;
+            document.body.className = selectedTheme;
+            localStorage.setItem('theme', selectedTheme);
+        }
+    </script>
+<h1>Contact Me</h1>
+<p>
+    <a href="tel:+1(845)763-6014">+1 (845) 763-6014</a> </p>
+    <p> <a href="mailto:jraz@highpoint.edu">Send an email</a></p>
+    <a href="https://www.linkedin.com/in/jonathan-raz-b10653245/">Visit my LinkedIn</a>
+
+
+</body>
+</html>
